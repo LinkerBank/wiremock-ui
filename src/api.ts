@@ -3,7 +3,7 @@ import { IServer } from './modules/servers'
 import { IMapping } from './modules/mappings'
 
 const buildApiUrl = (server: IServer, path: string): string =>
-    `${server.url}${server.port ? `:${server.port}` : ''}/__admin${path}`
+    `${server.url}${server.port ? `:${server.port}` : ''}/wiremock/__admin${path}`
 
 export const getMappings = (server: IServer) =>
     ajax.getJSON(buildApiUrl(server, '/mappings'))
